@@ -13,3 +13,22 @@
 1. `~/.zshrc` to put alias command
 2. `all(selector)` give you an array of the same element on the page. use [index] to access it.
       e.g `expect(all('input[type="radio"]')[0].value).to eq(I18n.t('personal_loan.shared.filter.singaporean'))`
+
+## 02-01-2019
+git command to remove commit
+```
+10814  git rebase -i 87c78219d7b65cbf9e8bfef3792b7813fbce01f0
+10815  git add .
+10816  git rebase --continue
+10817  git push origin +feature/segment_tracking_on_listing_page#1428
+10818  git pull origin master
+10819  git add .
+10820  git rebase --continue
+10821  git push
+
+vim command
+v -- visual
+double d -- delete line
+u - previous step (command + z)
+:x -- save and exit
+```
