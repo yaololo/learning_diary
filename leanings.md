@@ -32,3 +32,17 @@ double d -- delete line
 u - previous step (command + z)
 :x -- save and exit
 ```
+#### Pass parameters as option value
+
+def func(param1, param2, *args)
+  options = args.extract_options!
+  @list_position = options[:list_position]
+end
+
+func(param1, param2, list_position: list_position_value)
+
+## 04-01-2019
+`git remote set-url` + `origin`/`upstream` to change existing remote from ssh to https or vice verse.
+e.g `git remote set-url origin https://github.com/USERNAME/REPOSITORY.git`
+
+refer to docs at: https://help.github.com/articles/changing-a-remote-s-url/
