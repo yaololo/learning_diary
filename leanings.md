@@ -46,3 +46,15 @@ func(param1, param2, list_position: list_position_value)
 e.g `git remote set-url origin https://github.com/USERNAME/REPOSITORY.git`
 
 refer to docs at: https://help.github.com/articles/changing-a-remote-s-url/
+
+
+## 09-01-2019
+Rails render a collection in view
+```ruby
+  = render partial: 'component name',
+           collection: 'An array collection',
+           as: :variable,
+           locals: { class_name: "some css name", variable1: variable1, variable2: variable2 }
+
+# NOTE:  `as: : variable` is to customize the element name, locals is to pass other data into the component
+```
