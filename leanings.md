@@ -58,3 +58,16 @@ Rails render a collection in view
 
 # NOTE:  `as: : variable` is to customize the element name, locals is to pass other data into the component
 ```
+
+## 10-01-2019
+Different ways of creating Rails method which takes in hash as parameter
+```ruby
+def initialize(params1:, params2:, params3:)
+  @params1 = params1
+  @params2 = params2
+  @params3 = params3
+end
+
+# call initialize
+something = initialize(params1: 'params1', params2: 'params2', params3: 'params3')
+```
