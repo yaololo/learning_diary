@@ -60,7 +60,7 @@ Rails render a collection in view
 ```
 
 ## 10-01-2019
-Different ways of creating Rails method which takes in hash as parameter
+Different ways of creating Rails method
 ```ruby
 def initialize(params1:, params2:, params3:)
   @params1 = params1
