@@ -20,7 +20,7 @@ git command to remove commit
 10814  git rebase -i 87c78219d7b65cbf9e8bfef3792b7813fbce01f0
 10815  git add .
 10816  git rebase --continue
-10817  git push origin +feature/segment_tracking_on_listing_page#1428
+10817  git push origin + `branch name`
 10818  git pull origin master
 10819  git add .
 10820  git rebase --continue
@@ -70,4 +70,17 @@ end
 
 # call initialize
 something = initialize(params1: 'params1', params2: 'params2', params3: 'params3')
+```
+
+## 14-01-2019
+Deface
+ - to override the existing file in another gem
+ - what every variable in the override file is accessible in the deface file
+
+```ruby
+# in deface file
+method(existing_variable, new_variable)
+# in override file
+new_variable = 'something'
+method(existing_variable, new_variable)
 ```
