@@ -84,3 +84,22 @@ method(existing_variable, new_variable)
 new_variable = 'something'
 method(existing_variable, new_variable)
 ```
+
+
+## 21-01-2019
+Heruko does not allow you to specify a port number to deploy on, instead it decides for you.
+```js
+// In your code, use process.env.PORT || Port to let heroku implement port number for you
+// e.g
+
+const app = reuqire('express')();
+app.get('/'. (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(process.env.PORT || Port, () => {
+  console.log(`App is listening on port: ${port}`);
+});
+
+module.exports = app;
+```
