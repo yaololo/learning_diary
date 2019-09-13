@@ -28,7 +28,7 @@ this.setState((state, props) => ({
 
 `setState` is mergeing of object (like Object.assign). Update one key value paire and the rest will remain intact.
 
-#### Handling Events
+### Handling Events
 
 Event binding is to make ‘this’ work in the callback. If it is not a callback, it is not necessary to bind the event to the component. It is not React-specific behavior, it is a part of how functions work in JS. In general, if you refer to a method without () after it, you should bind it.
 
@@ -242,6 +242,15 @@ It could solve issue where a table html renders a react component contains multi
   <dd>{item.description}</dd>
 </React.Fragment>
 ```
+
+## Higher Order Components
+Concretely, a higher-order component is a function that takes a component and returns a new component.
+`const EnhancedComponent = higherOrderComponent(WrappedComponent);`
+
+Whereas a component transforms props into UI, a higher-order component transforms a component into another component.
+
+
+
 
 ## Accessibility
 
