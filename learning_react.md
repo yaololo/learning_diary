@@ -52,12 +52,12 @@ class LoggingButton extends React.Component {
 
 - Pass argument to event handlers
 
-```js
+```jsx
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```
 
-```js
+```jsx
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -110,7 +110,7 @@ If conditions become too complex, extract it out to become a component, like a f
 
 Tips, construct code in render and return for view only.
 
-```js
+```jsx
   render() {
     const isLoggedIn = this.state.isLoggedIn;
     let button;
@@ -334,3 +334,49 @@ Tow rules:
 
 - Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
 - Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions. (There is just one other valid place to call Hooks — your own custom Hooks. We’ll learn about them in a moment.)
+
+
+
+
+
+# API
+## Fording Ref
+It is to passing a ref through a component to one of its children. Create a ref to its child component and manipulate the ref attributes.
+
+React.forwardRef accepts a rendering function as an argument. React will call this function with props and ref as two arguments. This function should return a React node.
+
+```jsx
+// RFInput.js
+import React from "react";
+
+const RFInput = React.forwardRef((props, ref) => {
+  return (
+    <div>
+      <input type='text' ref={ref} />
+    </div>
+  );
+});
+
+export default RFInput;
+
+// Parent file
+import React from "react";
+import RFInput from "./RFInput";
+
+const Create = () => {
+  const [inputRef, setInputRef] = React.useState(React.createRef())
+
+  const clickHandler = () => {
+    inputRef.current.focus();
+  };
+  return (
+    <div>
+      <RFInput ref={inputRef} />
+      <button onClick={clickHandler}>Create</button>
+    </div>
+  );
+};
+
+export default Create;
+
+```
