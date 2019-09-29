@@ -70,6 +70,8 @@ Rule : Next character after keywords where/let/of/do determines the starting col
 ## Lect 3 Data Types and Control Constructs
 
 ### Data Types
+> An algebraic data type is a data type defined out of a combination of two constructions: products and sums. A product is a way to combine multiple values of different types into one. They're present in pretty much all languages, often called “structs”, “records” or “tuples”. --- From Quora
+
 
 #### Primitive Types
 
@@ -222,3 +224,25 @@ Fundamentally, there are two kinds of types.
 
 
 ### Type Classes
+
+### Class Type
+- Variables and data constructors are exist at the term level (values live and is the code that executes)
+- Type variables and type constructors, typeclasses are exist at the type-level (used by program to verify and analysis types)
+- Modules
+
+
+###### Data declaration
+```haskell
+data Bool = True | False
+data Maybe a = Nothing | Just a
+```
+To define new data type, keyword `data` is used which create a new algebraic data type.
+`Bool` and `Maybe` are type constructors/ type name is the name of the defined datatype which is capitalized.
+
+`True` and `Nothing` are data constructors which are functions create data or values(Term level)
+
+
+Type class contains different types, e.g Num contains Integer, Float which contains more type. 
+
+Overloading (or ad-hoc polymorphism). Which allow types to be overloaded to let the compiler know what types to use when type name is the same. 
+E.g `+` can be used for both integer and float and the system wit `algorithm W` could infer the type.
