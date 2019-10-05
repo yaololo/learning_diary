@@ -217,13 +217,18 @@ e.g`let list2 = RNode2 3 (Just (RNode2 4 Nothing))`
 Fundamentally, there are two kinds of types.
 - Product types that include tuples and records.
 - Sum types that include ordinals and general algebraic data types.
-  - Product type is similar to conjunction `a and b`
+>  - Product type is similar to conjunction `a and b`
     - `type Pair a b = (a, b)`
-  - Sum type is similar to disjunction `a or b`.
+>  - Sum type is similar to disjunction `a or b`.
     - `type Either a b = Left a | Right b`
 
 
 ### Type Classes
+
+### algebraic data types
+> An algebraic data type is a data type defined out of a combination of two constructions: products and sums. A product is a way to combine multiple values of different types into one. They're present in pretty much all languages, often called “structs”, “records” or “tuples”.May 6, 2018
+> From Quora
+
 
 ### Class Type
 - Variables and data constructors are exist at the term level (values live and is the code that executes)
@@ -231,18 +236,36 @@ Fundamentally, there are two kinds of types.
 - Modules
 
 
+Overloading (or ad-hoc polymorphism). Which allow types to be overloaded to let the compiler know what types to use when type name is the same. 
+E.g `+` can be used for both integer and float and `algorithm W` could infer the type.
+
 ###### Data declaration
 ```haskell
 data Bool = True | False
 data Maybe a = Nothing | Just a
 ```
 To define new data type, keyword `data` is used which create a new algebraic data type.
-`Bool` and `Maybe` are type constructors/ type name is the name of the defined datatype which is capitalized.
+`Bool` and `Maybe` are type constructors/ type name is the name of the defined datatype which is capitalized. It is used in type signatures.
 
 `True` and `Nothing` are data constructors which are functions create data or values(Term level)
 
-
 Type class contains different types, e.g Num contains Integer, Float which contains more type. 
 
-Overloading (or ad-hoc polymorphism). Which allow types to be overloaded to let the compiler know what types to use when type name is the same. 
-E.g `+` can be used for both integer and float and the system wit `algorithm W` could infer the type.
+
+###### Constants and constructors
+- Type and data constructors that take no arguments are constants, which only store a fixed type and amount of data
+- `Arity` refer to the number of argument a function or a constructor takes.
+    - Function that takes no argument is called `nullary`
+    - Constructors that take one argument are called `unary`
+    - Data constructors that take more than one argument are called `products`
+
+- `Tuple` is called `anonymous product` 
+
+###### Type alias/ synonym
+A type synonym is a new name for an existing type. Values of different synonyms of the same type are entirely compatible. In Haskell you can define a type synonym using `type`.
+`type MyChar = Char`
+
+###### Data declaration, `newtype`
+- `newtype` permits only one constructor and only one field.
+`newtype Radius = Radius Double`
+- 
